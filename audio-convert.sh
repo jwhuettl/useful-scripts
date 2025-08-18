@@ -8,7 +8,7 @@ do
   ffmpeg -i "${file}" -b:a 192k -vn "${file%.*}".mp3
   
   if [$1 == clean | $1 == c]; then
-    mv "${file}" .local/share/Trash/files
+    gio trash "${file}" 
   fi
 
 done
